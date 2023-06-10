@@ -1,5 +1,6 @@
 package com.example.REST.helper;
 
+import org.springframework.core.io.ClassPathResource;
 import org.springframework.stereotype.Component;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -12,7 +13,15 @@ import java.nio.file.StandardCopyOption;
 
 @Component
 public class FileUploader {
-    public final String upload_Dir="C:\\Users\\Guest007\\Downloads\\boot\\REST\\REST\\src\\main\\resources\\static\\images";
+    //static path
+    //public final String upload_Dir="C:\\Users\\Guest007\\Downloads\\boot\\REST\\REST\\src\\main\\resources\\static\\images";
+
+    //dynamic path
+    public final String upload_Dir=new ClassPathResource("/static/images/").getFile().getAbsolutePath();
+
+    public FileUploader() throws IOException {
+    }
+
     public boolean uploadFile(MultipartFile multipartFile) throws IOException {
 //        boolean flag=false;
 //        try {

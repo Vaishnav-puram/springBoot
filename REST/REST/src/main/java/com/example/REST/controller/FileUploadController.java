@@ -8,8 +8,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import java.io.IOException;
+import java.util.Objects;
 
 @RestController
 public class FileUploadController {
@@ -27,7 +29,8 @@ public class FileUploadController {
 
         boolean flag=fileUploader.uploadFile(file);
         if(flag){
-            return ResponseEntity.ok("successfully uploaded");
+            //return ResponseEntity.ok("successfully uploaded");
+            return ResponseEntity.ok(ServletUriComponentsBuilder.fromCurrentContextPath().path("/images/").path(Objects.requireNonNull(file.getOriginalFilename())).toUriString());
         }else{
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("error in uploading file");
         }
