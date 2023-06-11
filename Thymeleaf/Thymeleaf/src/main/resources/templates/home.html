@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Thyhmeleaf</title>
+</head>
+<body>
+<span>Thymeleaf Demo!</span><br>
+<span>Name is : </span><span th:text="${name}"></span><br>
+<span>Age is : </span><span th:text="${age}"></span><br>
+<span>City : </span><span th:text="${city}"></span><br>
+<span>Current Date : </span><span th:text="${currentDate}"></span><br>
+
+<span>Capital form : </span><span th:text="${#strings.toUpperCase(name)}"></span><br>
+</body>
+</html>
