@@ -34,4 +34,13 @@ public class MyController {
         model.addAttribute("names",list);
         return "iterator";
     }
+
+    @GetMapping("/condition")
+    public String conditional(Model m){
+        m.addAttribute("isActive",true);
+        m.addAttribute("gender",'M');
+        List<Integer> list=List.of(23,11,24,54,77,98,101);
+        m.addAttribute("nums",list);
+        return "condition";
+    }
 }
