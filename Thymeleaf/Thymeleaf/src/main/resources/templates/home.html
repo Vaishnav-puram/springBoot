@@ -12,5 +12,11 @@
 <span>Current Date : </span><span th:text="${currentDate}"></span><br>
 
 <span>Capital form : </span><span th:text="${#strings.toUpperCase(name)}"></span><br>
+
+<div th:with="a=5,b=6">
+    <span>value of a <span th:text="${a}"></span></span>
+    <span th:text="'value of b is '+${b}"></span>
+</div>
+
 </body>
 </html>
