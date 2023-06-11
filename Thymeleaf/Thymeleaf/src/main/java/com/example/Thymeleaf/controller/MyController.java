@@ -43,4 +43,10 @@ public class MyController {
         m.addAttribute("nums",list);
         return "condition";
     }
+
+    @GetMapping("/fragment")
+    public String fragments(){
+
+        return "fragments";
+    }
 }

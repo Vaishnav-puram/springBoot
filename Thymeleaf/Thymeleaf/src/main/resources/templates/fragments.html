@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Fragment Thymeleaf</title>
+</head>
+<body>
+    <h3>Using Replace</h3>
+    <footer id="host_tag" th:replace="footer::footer1">
+
+    </footer>
+
+    <h3>Using Insert</h3>
+    <footer id="host1_tag" th:insert="footer::footer1">
+
+    </footer>
+
+    <h3>Using Include</h3>
+    <footer id="host2_tag" th:include="footer::footer1">
+
+    </footer>
+
+</body>
+</html>
