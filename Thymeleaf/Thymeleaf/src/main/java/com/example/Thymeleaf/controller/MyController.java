@@ -12,8 +12,8 @@ import java.util.Date;
 
 @Controller
 public class MyController {
-//    @GetMapping("/home")
-    @RequestMapping(value = "/home",method = RequestMethod.GET)
+    @GetMapping("/home")
+    //@RequestMapping(value = "/home",method = RequestMethod.GET)
     public String home(Model model){
         model.addAttribute("name","vaishnav");
         model.addAttribute("age",23);
