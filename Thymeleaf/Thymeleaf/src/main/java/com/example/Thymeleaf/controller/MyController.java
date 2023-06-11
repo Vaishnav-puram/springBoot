@@ -8,7 +8,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 @Controller
 public class MyController {
@@ -20,5 +22,16 @@ public class MyController {
         model.addAttribute("city","bangaluru");
         model.addAttribute("currentDate",new Date());
         return "home";
+    }
+
+    @GetMapping("/forEach")
+    public String iterator(Model model){
+        List<String> list=new ArrayList<>();
+        list.add("ajay");
+        list.add("vijay");
+        list.add("vimal");
+        list.add("kamal");
+        model.addAttribute("names",list);
+        return "iterator";
     }
 }
