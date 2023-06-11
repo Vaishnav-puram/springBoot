@@ -49,4 +49,15 @@ public class MyController {
 
         return "fragments";
     }
+
+    @GetMapping("/inherit1")
+    public String inheritFragments1(){
+        return "child1";
+    }
+
+    @GetMapping("/inherit2")
+    public String inheritFragments2(){
+        return "child2";
+    }
 }
+
